@@ -12,13 +12,18 @@ public class Member {
         this.borrowed_books = new ArrayList<>();
     }
 
-    public Member(String name) {
+    public Member(String name,String id) {
+        this.id = id;
         this.name = name;
         this.borrowed_books = new ArrayList<>();
     }
 
     public String getName() {
         return name;
+    }
+
+    public String getId() {
+        return id;
     }
 
     //working
