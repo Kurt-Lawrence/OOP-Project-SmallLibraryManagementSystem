@@ -20,6 +20,12 @@ public class Library {
         members.add(new Member("Bob","3"));
         members.add(new Member("Sarah","4"));
         members.add(new Member("Mike","5"));
+
+        books.add(new Book("Power"));
+        books.add(new Book("Man of Influence"));
+        books.add(new Book("Atom Habits"));
+        books.add(new Book("Utang Diary"));
+        books.add(new Book("ABNKKBSNPLAKO"));
     }
 
     //working
@@ -36,10 +42,14 @@ public class Library {
     public void display_books(){
         Iterator<Book> iterator_book = books.iterator();
 
+        System.out.println("\n-------------------\nBooks");
+
         while(iterator_book.hasNext()){
             Book book = iterator_book.next();
             System.out.println(book.getTitle());
         }
+
+        System.out.println("-------------------\n");
     }
 
     //working

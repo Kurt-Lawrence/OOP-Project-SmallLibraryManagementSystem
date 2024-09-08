@@ -15,7 +15,8 @@ public class LibraryController {
 
         System.out.println("Welcome to Virtual Library! \n");
         System.out.println("1. Accounts" +
-                "\n2. Books");
+                "\n2. Books" +
+                "\n3. Exit");
     }
 
     public void show_members_menu(){
@@ -38,7 +39,11 @@ public class LibraryController {
                     break;
                 case 2:
                     this.show_books_menu();
+                    userAction = this.get_userAction();
+                    this.action_books_menu(userAction);
                     break;
+                case 3:
+                    System.exit(0);
                 default:
                     System.out.println("Invalid input. Try Again");
             }
@@ -49,6 +54,22 @@ public class LibraryController {
         switch (userAction){
             case 1:
                 library.display_members();
+                break;
+            case 2:
+                String[] info = library.get_info_member();
+                library.register_member(info[0],info[1]);
+                break;
+            default:
+                System.out.println("Invalid input. Try Again");
+        }
+
+    }
+
+    public void action_books_menu(int userAction){
+        switch (userAction){
+            case 1:
+                library.display_books();
+                this.show_books_menu();
                 break;
             case 2:
                 String[] info = library.get_info_member();
